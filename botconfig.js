@@ -3,7 +3,7 @@ module.exports = {
   ExpressServer: true, //If you wanted to make the website run or not
   DefaultPrefix: process.env.Prefix || ">", //Default prefix, Server Admins can change the prefix
   Port: 3000, //Which port website gonna be hosted
-  SupportServer: "https://discord.gg/sbySMS7m3v", //Support Server Link
+  SupportServer: "https://discord.gg/JGE5W9Dg7P", //Support Server Link
   Token: process.env.Token || "", //Discord Bot Token
   ClientID: process.env.Discord_ClientID || "", //Discord Client ID
   ClientSecret: process.env.Discord_ClientSecret || "", //Discord Client Secret
@@ -12,7 +12,8 @@ module.exports = {
   DefaultVolume: 100, //Sets the default volume of the bot, You can change this number anywhere from 1 to 100
   CallbackURL: "/api/callback", //Discord API Callback url. Do not touch it if you don't know what you are doing. All you need to change for website to work is on line 20.
   "24/7": false, //If you want the bot to be stay in the vc 24/7
-  CookieSecret: "Pikachu is cute", //A Secret like a password
+  Icon2URL:"https://media.giphy.com/media/FUypId9tabaEhGLNi7/giphy.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
+  CookieSecret: "Pikachu is EPIC", //A Secret like a password
   IconURL:
     "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/logo.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
   EmbedColor: "RANDOM", //Color of most embeds | Dont edit unless you want a specific color instead of a random one each time
