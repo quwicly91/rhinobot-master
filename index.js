@@ -49,7 +49,7 @@ client.on('guildMemberAdd', async member => {
 .addField("**Sunucuya Katılma Tarihi:**", `\`${member.joinedAt.toLocaleString()}\``, true)
 .addField("**Oluşturulma Tarihi:**", `\`${member.user.createdAt.toLocaleString()}\``, true)
 .addField(`Bu davet kodu \`${usedInvite.uses}\` kere kullanılmış.`,`Davet Kodu: \`${usedInvite}\``,true)
-const logChannel = member.guild.channels.cache.find(channel => channel.name === "giriş-çıkış");  
+const logChannel = member.guild.channels.cache.find(channel => channel.name === "giriş-çıkış-log");  
       if(logChannel) {
             logChannel.send(quwicly).catch(err => console.log(err));
         }
@@ -68,7 +68,7 @@ const quwicly = new Discord.MessageEmbed()
 .setThumbnail(member.user.avatarURL)
 .setDescription(`**\`${member.user.username}\` Sunucudan ayrıldı, sensiz \`${member.guild.memberCount}\` kişiyiz :(**`)
 .addField(`<a:raninbowp:843971041889222656> Üye Adı:`, `${member}`, true)
-const logChannel = member.guild.channels.cache.find(channel => channel.name === "giriş-çıkış");  
+const logChannel = member.guild.channels.cache.find(channel => channel.name === "giriş-çıkış-log");  
       if(logChannel) {
             logChannel.send(quwicly)
         }
