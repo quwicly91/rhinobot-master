@@ -163,12 +163,12 @@ class DiscordMusicBot extends Client {
       .on("trackStart", async (player, track) => {
         this.SongsPlayed++;
         let TrackStartedEmbed = new MessageEmbed()
-          .setAuthor(`Now playing ♪`, this.botconfig.IconURL)
+          .setAuthor(`Şimdi oynuyor`, "https://images-ext-1.discordapp.net/external/gMF8KCGxsLFZZxHqwrsjCKsmcmh3TbUUybMkFxTI3ZU/https/media.giphy.com/media/lNLVInp4Tx3BLnR6Nx/giphy.gif")
           .setThumbnail(player.queue.current.displayThumbnail())
           .setDescription(`[${track.title}](${track.uri})`)
-          .addField("Requested by", `${track.requester}`, true)
+          .addField("Talep eden", `${track.requester}`, true)
           .addField(
-            "Duration",
+            "Süresi",
             `\`${prettyMilliseconds(track.duration, {
               colonNotation: true,
             })}\``,
