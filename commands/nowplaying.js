@@ -3,7 +3,7 @@ const prettyMilliseconds = require("pretty-ms");
 
 module.exports = {
   name: "nowplaying",
-  description: "See what song is currently playing",
+  description: "Şu anda hangi şarkının çaldığını görün",
   usage: "",
   permissions: {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
@@ -22,17 +22,18 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "❌ | **Şu anda hiçbir şey oynatılmıyor ...**"
       );
 
     let song = player.queue.current;
     let QueueEmbed = new MessageEmbed()
-      .setAuthor("Currently playing", client.botconfig.IconURL)
-      .setColor(client.botconfig.EmbedColor)
+      .setAuthor("Çalan şarkı", client.botconfig.IconURL)
+      .setColor("RANDOM")
       .setDescription(`[${song.title}](${song.uri})`)
-      .addField("Requested by", `${song.requester}`, true)
+      .addField("Tarafından talep edildi", `${song.requester}`, true)
+      .addField("Sıradaki konumu", `${player.queue.size - 0}`, true)
       .addField(
-        "Duration",
+        "Süre",
         `${
           client.ProgressBar(player.position, player.queue.current.duration, 15)
             .Bar
@@ -45,7 +46,7 @@ module.exports = {
       .setThumbnail(player.queue.current.displayThumbnail());
     return message.channel.send(QueueEmbed);
   },
-
+  
   SlashCommand: {
     /**
      *
@@ -56,7 +57,7 @@ module.exports = {
      */
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
-      if (!player.queue.current)
+      if (!player)
         return client.sendTime(
           interaction,
           "❌ | **Nothing is playing right now...**"
@@ -65,7 +66,7 @@ module.exports = {
       let song = player.queue.current;
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Currently playing", client.botconfig.IconURL)
-        .setColor(client.botconfig.EmbedColor)
+        .setColor("RANDOM")
         .setDescription(`[${song.title}](${song.uri})`)
         .addField("Requested by", `${song.requester}`, true)
         .addField(
