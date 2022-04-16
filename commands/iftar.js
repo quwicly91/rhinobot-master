@@ -34,7 +34,7 @@ module.exports = {
         .setDescription(`\`\`\`İftar Vaktine Kalan Süre: ${res.data.result[0].hour} ${res.data.result[0].min}\`\`\``)
         .setImage("https://www.gelisenbeyin.net/img/ramazan-oruc.gif")  
         .setTimestamp()
-        .setFooter(`© 2022 Developed by Qu'wicLy ${client.user.username}`, client.user.avatarURL({ size:1024, dynamic:true, format:'png' }))
+        .setFooter(`© 2022 ${client.user.username}`, client.user.avatarURL({ size:1024, dynamic:true, format:'png' }))
     message.channel.send(messageEmbed);
     }).catch(err => {
         message.channel.send('Bir sorun ortaya çıktı. Komudu doğru kullandığınızdan emin olun.');
