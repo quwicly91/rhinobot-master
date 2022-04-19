@@ -10,10 +10,10 @@ client.on("guildCreate", async guild => {
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`© Developed by Qu'wicLy`, client.user.displayAvatarURL())
-    .setAuthor(`${guild.name} Adlı Sunucuna ${client.user.username} başarıyla eklendi`,client.config.Icon2URL)
+    .setAuthor(`${guild.name} Adlı Sunucuna ${client.user.username} başarıyla eklendi`,client.botconfig.Icon2URL)
     .setDescription(`**Beni sunucuna eklediğin için teşekkürler! Kullanım ve komutlar için \`${client.botconfig.DefaultPrefix}help\`veya \`${client.botconfig.DefaultPrefix}yardım \` yazman yeterli iyi eğlenceler!
     
-    Thanks for adding me to the server! For usage and commands, just write \`${client.config.DefaultPrefix}help\`or \`${client.config.DefaultPrefix}yardım \` have fun!
+    Thanks for adding me to the server! For usage and commands, just write \`${client.botconfig.DefaultPrefix}help\`or \`${client.botconfig.DefaultPrefix}yardım \` have fun!
     **`)
     .addField(">**Destek Sunucsu**"," [Destek Sunucsu](https://discord.gg/BmkDCJwbeT)")
     .setImage('https://media.giphy.com/media/SWWR2NaACUu5qmf0Uo/giphy.gif')
