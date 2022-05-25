@@ -3,14 +3,14 @@ const Discord = require('discord.js');
 const axios = require('axios');
 
 module.exports = {
-  name: "iftar",
+  name: "",
   description: "iftar zamanını gösterir",
   usage: "",
   permissions: {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
     member: [],
   },
-  aliases: ["iftar"],
+  aliases: [""],
   /**
    *
    * @param {import("../structures/DiscordMusicBot")} client
